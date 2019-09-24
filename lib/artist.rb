@@ -1,8 +1,13 @@
+require_relative '../lib/concerns/memorable.rb'
+
 require 'pry'
 
 class Artist
+  
   attr_accessor :name
   attr_reader :songs
+  
+  
 
   @@artists = []
 
@@ -18,14 +23,16 @@ class Artist
   def self.all
     @@artists
   end
+  
+##### Handled in the memorable module
+#  def self.reset_all
+#    self.all.clear
+#  end
 
-  def self.reset_all
-    self.all.clear
-  end
-
-  def self.count
-    self.all.count
-  end
+#  def self.count
+#    self.all.count
+#  end
+#####
 
   def add_song(song)
     @songs << song
